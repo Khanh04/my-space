@@ -3,9 +3,11 @@ import '../styles/global.css';
 
 const skillGroups = [
   {
-    label: "ML",
+    label: "Machine Learning",
     tags: [
       { key: "llm-agents", label: "LLM Agents" },
+      { key: "nlp", label: "NLP"},
+      { key: "transformer", label: "Transformer"},
       { key: "mcp", label: "MCP" },
       { key: "rag", label: "RAG" },
       { key: "nlp", label: "NLP" },
@@ -13,7 +15,6 @@ const skillGroups = [
       { key: "ocr", label: "OCR" },
       { key: "pytorch", label: "PyTorch" },
       { key: "tensorflow", label: "TensorFlow" },
-      { key: "wandb", label: "W&B" },
     ],
   },
   {
@@ -65,20 +66,16 @@ const experience = [
     period: "2022 — Present",
     bullets: [
       {
-        text: "Built an LLM agent (served with vLLM) and MCP server as the agentic layer over complex hardware and experiment workflows — natural-language control of multi-step engineering processes.",
-        tags: ["llm-agents", "mcp", "vllm"],
+        text: "Built an LLM agent as the agentic layer over complex hardware and quantum experiment workflows, natural-language control of multi-step engineering processes.",
+        tags: ["llm-agents", "mcp", "vllm", "pytorch", "transformer"],
       },
       {
         text: "Built production ML systems for automated device calibration, reaching 99.8% gate fidelity and cutting calibration from ~1 day of manual tuning to ~30 minutes.",
-        tags: ["pytorch", "wandb"],
+        tags: ["pytorch", "react", "typescript", "fastapi"],
       },
       {
         text: "Designed and shipped a customer-facing Python SDK and internal tooling that became the primary developer interface across two research teams.",
         tags: ["python"],
-      },
-      {
-        text: "Built real-time data ingestion and analysis pipelines with React/TypeScript dashboards for experiment monitoring.",
-        tags: ["react", "typescript"],
       },
     ],
   },
@@ -90,10 +87,10 @@ const experience = [
     bullets: [
       {
         text: "Trained and deployed production NLP systems serving hundreds of thousands of daily requests at ~95% accuracy across seven languages.",
-        tags: ["nlp", "pytorch", "tensorflow", "wandb"],
+        tags: ["nlp", "pytorch", "tensorflow"],
       },
       {
-        text: "Optimized inference for low-latency, cost-bounded serving with dynamic batching — cutting memory 40% while sustaining throughput.",
+        text: "Optimized inference for low-latency, cost-bounded serving with dynamic batching, cutting memory 40% while sustaining throughput.",
         tags: ["quantization"],
       },
       {
@@ -102,7 +99,11 @@ const experience = [
       },
       {
         text: "Ran crowd annotation end to end: designed labeling tasks and curated ~30K labeled examples into model-ready training sets.",
-        tags: ["python"],
+        tags: ["python","react"],
+      },
+       {
+        text: "Trained and deployed the first Finnish abstract summarizer, achieving state-of-the-art performance.",
+        tags: ["python","pytorch","transformer"],
       },
     ],
   },
@@ -136,13 +137,13 @@ const projects = [
   {
     title: "Speech-to-Text Inference Service",
     stack: ["Conformer", "ONNX", "CTranslate2", "FastAPI"],
-    tags: ["asr", "onnx", "quantization", "fastapi", "pytorch", "python"],
+    tags: ["asr", "onnx", "quantization", "fastapi", "pytorch", "python","fastapi"],
     body: "Profiled and optimized ASR inference with ONNX, CTranslate2, and 8-bit quantization for low-latency, cost-bounded transcription. Built a Conformer-based pipeline handling regional dialect variation, from raw-audio preprocessing to deployed FastAPI service.",
   },
   {
     title: "Vietnamese Legal RAG Assistant",
     stack: ["PyTorch", "BERT", "FAISS", "FastAPI"],
-    tags: ["rag", "nlp", "pytorch", "faiss", "fastapi", "python"],
+    tags: ["rag", "nlp", "pytorch", "faiss", "fastapi", "python","transformer"],
     body: "End-to-end retrieval pipeline over Vietnamese legal documents: ingestion, BERT embeddings, FAISS vector indexing, and a chat interface that returns grounded answers with citations.",
   },
   {
@@ -203,7 +204,7 @@ const projects = [
         <p class="eyebrow">01 · About</p>
         <h2>Some context.</h2>
         <p>
-          I'm a software engineer based in Helsinki with seven years building production systems, from machine learning to backend infrastructure. 
+          I'm a software engineer based in Helsinki with eight years of experience building production systems, from machine learning to backend infrastructure. 
           I'm interested in building scalable ML systems for real world applications and exploring new technologies.
         </p>
         <p>
