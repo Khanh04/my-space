@@ -1,0 +1,379 @@
+---
+import '../styles/global.css';
+
+const skillGroups = [
+  {
+    label: "ML",
+    tags: [
+      { key: "llm-agents", label: "LLM Agents" },
+      { key: "mcp", label: "MCP" },
+      { key: "rag", label: "RAG" },
+      { key: "nlp", label: "NLP" },
+      { key: "asr", label: "ASR" },
+      { key: "ocr", label: "OCR" },
+      { key: "pytorch", label: "PyTorch" },
+      { key: "tensorflow", label: "TensorFlow" },
+      { key: "wandb", label: "W&B" },
+    ],
+  },
+  {
+    label: "Inference",
+    tags: [
+      { key: "vllm", label: "vLLM" },
+      { key: "onnx", label: "ONNX" },
+      { key: "quantization", label: "Quantization" },
+    ],
+  },
+  {
+    label: "Data",
+    tags: [
+      { key: "faiss", label: "FAISS" },
+    ],
+  },
+  {
+    label: "Backend",
+    tags: [
+      { key: "python", label: "Python" },
+      { key: "fastapi", label: "FastAPI" },
+      { key: "flask", label: "Flask" },
+    ],
+  },
+  {
+    label: "Frontend",
+    tags: [
+      { key: "react", label: "React" },
+      { key: "typescript", label: "TypeScript" },
+    ],
+  },
+  {
+    label: "Infra",
+    tags: [
+      { key: "kubernetes", label: "Kubernetes" },
+      { key: "docker", label: "Docker" },
+      { key: "cicd", label: "CI/CD" },
+      { key: "aws", label: "AWS" },
+      { key: "gcp", label: "GCP" },
+    ],
+  },
+];
+
+const experience = [
+  {
+    role: "Senior Software Engineer",
+    company: "QuantrolOx",
+    location: "Espoo, Finland",
+    period: "2022 — Present",
+    bullets: [
+      {
+        text: "Built an LLM agent (served with vLLM) and MCP server as the agentic layer over complex hardware and experiment workflows — natural-language control of multi-step engineering processes.",
+        tags: ["llm-agents", "mcp", "vllm"],
+      },
+      {
+        text: "Built production ML systems for automated device calibration, reaching 99.8% gate fidelity and cutting calibration from ~1 day of manual tuning to ~30 minutes.",
+        tags: ["pytorch", "wandb"],
+      },
+      {
+        text: "Designed and shipped a customer-facing Python SDK and internal tooling that became the primary developer interface across two research teams.",
+        tags: ["python"],
+      },
+      {
+        text: "Built real-time data ingestion and analysis pipelines with React/TypeScript dashboards for experiment monitoring.",
+        tags: ["react", "typescript"],
+      },
+    ],
+  },
+  {
+    role: "Machine Learning Engineer",
+    company: "Vainu",
+    location: "Helsinki, Finland",
+    period: "2018 — 2022",
+    bullets: [
+      {
+        text: "Trained and deployed production NLP systems serving hundreds of thousands of daily requests at ~95% accuracy across seven languages.",
+        tags: ["nlp", "pytorch", "tensorflow", "wandb"],
+      },
+      {
+        text: "Optimized inference for low-latency, cost-bounded serving with dynamic batching — cutting memory 40% while sustaining throughput.",
+        tags: ["quantization"],
+      },
+      {
+        text: "Owned ML infrastructure on AWS and Kubernetes with automated deployment via GitLab CI/CD; cut deployment time from 4 hours to 10 minutes.",
+        tags: ["aws", "kubernetes", "docker", "cicd"],
+      },
+      {
+        text: "Ran crowd annotation end to end: designed labeling tasks and curated ~30K labeled examples into model-ready training sets.",
+        tags: ["python"],
+      },
+    ],
+  },
+  {
+    role: "Software Engineer / Data Scientist",
+    company: "Swappie",
+    location: "Helsinki, Finland",
+    period: "2022",
+    bullets: [
+      {
+        text: "Built an end-to-end ML pipeline on GCP (TensorFlow, FastAPI) and shipped demand-forecasting models from prototype to production with product teams.",
+        tags: ["tensorflow", "fastapi", "gcp", "python"],
+      },
+    ],
+  },
+  {
+    role: "Fullstack Developer",
+    company: "RND Works",
+    location: "Vantaa, Finland",
+    period: "2017 — 2018",
+    bullets: [
+      {
+        text: "Trained the first Finnish word embeddings and built a native Finnish chatbot with Google Cloud speech/vision integration.",
+        tags: ["nlp", "tensorflow", "flask", "gcp", "python"],
+      },
+    ],
+  },
+];
+
+const projects = [
+  {
+    title: "Speech-to-Text Inference Service",
+    stack: ["Conformer", "ONNX", "CTranslate2", "FastAPI"],
+    tags: ["asr", "onnx", "quantization", "fastapi", "pytorch", "python"],
+    body: "Profiled and optimized ASR inference with ONNX, CTranslate2, and 8-bit quantization for low-latency, cost-bounded transcription. Built a Conformer-based pipeline handling regional dialect variation, from raw-audio preprocessing to deployed FastAPI service.",
+  },
+  {
+    title: "Vietnamese Legal RAG Assistant",
+    stack: ["PyTorch", "BERT", "FAISS", "FastAPI"],
+    tags: ["rag", "nlp", "pytorch", "faiss", "fastapi", "python"],
+    body: "End-to-end retrieval pipeline over Vietnamese legal documents: ingestion, BERT embeddings, FAISS vector indexing, and a chat interface that returns grounded answers with citations.",
+  },
+  {
+    title: "Invoice Processing Pipeline",
+    stack: ["Tesseract", "Local LLMs", "OCR"],
+    tags: ["ocr", "python"],
+    body: "Multimodal document-understanding pipeline combining OCR and local LLMs for automated extraction across diverse PDF and image formats. Privacy-preserving, deployed on-premise.",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Khanh Nguyen — ML Engineer</title>
+    <meta name="description" content="Machine Learning engineer building production inference systems — speech, NLP, and LLM agents. Based in Helsinki." />
+    <meta property="og:title" content="Khanh Nguyen — ML Engineer" />
+    <meta property="og:description" content="Machine Learning engineer building production inference systems — speech, NLP, and LLM agents." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <script is:inline>
+      (() => {
+        const t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="theme-toggle" role="group" aria-label="Theme">
+      <button type="button" data-theme-set="light" aria-label="Light theme">light</button>
+      <span class="sep" aria-hidden="true">·</span>
+      <button type="button" data-theme-set="dark" aria-label="Dark theme">dark</button>
+    </div>
+    <main>
+      <section class="hero">
+        <h1>Khanh Nguyen</h1>
+        <p class="lede">
+          Senior software engineer, specialize in building production ML systems from Helsinki.
+        </p>
+        <div class="meta">
+          <span>Helsinki, FI</span>
+          <span class="sep">·</span>
+          <a href="mailto:khanhng93@proton.me">khanhng93@proton.me</a>
+          <span class="sep">·</span>
+          <a href="https://linkedin.com/in/khanh-nguyen-0" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="sep">·</span>
+          <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </section>
+
+      <section class="about">
+        <p class="eyebrow">01 · About</p>
+        <h2>Some context.</h2>
+        <p>
+          I'm a software engineer based in Helsinki with seven years building production systems, from machine learning to backend infrastructure. 
+          I'm interested in building scalable ML systems for real world applications and exploring new technologies.
+        </p>
+        <p>
+          Beyond ML, I'm interested in systems design and developer experience.
+        </p>
+      </section>
+
+      <section class="filter" aria-label="Filter by skill">
+        <div class="filter-groups">
+          {skillGroups.map((g) => (
+            <div class="filter-group">
+              <span class="filter-group-label">{g.label}</span>
+              <div class="filter-group-tags">
+                {g.tags.map((t, i) => (
+                  <span class="tag-item">
+                    <button type="button" class="tag" data-tag={t.key}>{t.label}</button>
+                    {i < g.tags.length - 1 && <span class="sep" aria-hidden="true">·</span>}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <button type="button" class="tag-clear" data-clear hidden>clear filters</button>
+      </section>
+
+      <section class="experience" data-filterable>
+        <p class="eyebrow">02 · Experience</p>
+        <h2>Selected roles.</h2>
+        <div class="roles">
+          {experience.map((r) => (
+            <article class="role" data-tags={[...new Set(r.bullets.flatMap((b) => b.tags))].join(' ')}>
+              <div class="role-head">
+                <div class="role-title">
+                  <span>{r.role}</span>
+                  <span class="company">{r.company}</span>
+                </div>
+                <div class="role-period">{r.period}</div>
+              </div>
+              <div class="role-location">{r.location}</div>
+              <ul>
+                {r.bullets.map((b) => <li data-tags={b.tags.join(' ')}>{b.text}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="projects-section" data-filterable>
+        <p class="eyebrow">03 · Selected projects</p>
+        <h2>Things I&rsquo;ve built.</h2>
+        <div class="projects">
+          {projects.map((p) => (
+            <article class="project" data-tags={p.tags.join(' ')}>
+              <h3>{p.title}</h3>
+              <p>{p.body}</p>
+              <div class="stack">
+                {p.stack.map((s) => <span>{s}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="contact">
+        <p class="eyebrow">04 · Contact</p>
+        <h2>Get in touch.</h2>
+        <p>
+          Open to conversations about production ML, inference infrastructure, and LLM tooling. The fastest way to reach me is email.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:khanhng93@proton.me">
+            <span class="label">Email</span>khanhng93@proton.me
+          </a>
+          <a href="https://linkedin.com/in/khanh-nguyen-0" target="_blank" rel="noopener">
+            <span class="label">LinkedIn</span>linkedin.com/in/khanh-nguyen-0
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener">
+            <span class="label">GitHub</span>github.com
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <span>© 2026 Khanh Nguyen</span>
+        <span>Helsinki · Finland</span>
+      </footer>
+    </main>
+
+    <script is:inline>
+      (() => {
+        const themeBtns = document.querySelectorAll('[data-theme-set]');
+        const media = window.matchMedia('(prefers-color-scheme: dark)');
+        const paintTheme = () => {
+          const stored = localStorage.getItem('theme');
+          const effective = stored || (media.matches ? 'dark' : 'light');
+          themeBtns.forEach((b) => b.classList.toggle('is-active', b.dataset.themeSet === effective));
+        };
+        themeBtns.forEach((b) => {
+          b.addEventListener('click', () => {
+            const t = b.dataset.themeSet;
+            document.documentElement.setAttribute('data-theme', t);
+            localStorage.setItem('theme', t);
+            paintTheme();
+          });
+        });
+        media.addEventListener('change', paintTheme);
+        paintTheme();
+      })();
+
+      (() => {
+        const tags = document.querySelectorAll('.tag');
+        const items = document.querySelectorAll('[data-tags]');
+        const sections = document.querySelectorAll('[data-filterable]');
+        const clear = document.querySelector('[data-clear]');
+        const HIDE_MS = 320;
+        const APPEAR_MS = 420;
+        const active = new Set();
+
+        const setState = (el, shouldShow) => {
+          clearTimeout(el._timer);
+          const wasGone = el.classList.contains('is-gone');
+          if (shouldShow) {
+            el.classList.remove('is-collapsing', 'is-gone');
+            if (wasGone) {
+              el.classList.add('is-appearing');
+              el._timer = setTimeout(() => el.classList.remove('is-appearing'), APPEAR_MS);
+            }
+          } else if (!wasGone) {
+            el.classList.remove('is-appearing');
+            el.classList.add('is-collapsing');
+            el._timer = setTimeout(() => el.classList.add('is-gone'), HIDE_MS);
+          }
+        };
+
+        const matches = (el) =>
+          (el.dataset.tags || '').split(' ').some((t) => active.has(t));
+
+        const render = () => {
+          const hasFilter = active.size > 0;
+          if (hasFilter) document.body.setAttribute('data-filter', 'on');
+          else document.body.removeAttribute('data-filter');
+
+          tags.forEach((t) => t.classList.toggle('is-active', active.has(t.dataset.tag)));
+
+          items.forEach((el) => setState(el, !hasFilter || matches(el)));
+
+          sections.forEach((section) => {
+            if (!hasFilter) return setState(section, true);
+            const anyMatch = Array.from(section.querySelectorAll('[data-tags]')).some(matches);
+            setState(section, anyMatch);
+          });
+
+          clear.hidden = !hasFilter;
+        };
+
+        tags.forEach((t) => {
+          t.addEventListener('click', () => {
+            const key = t.dataset.tag;
+            if (active.has(key)) active.delete(key);
+            else active.add(key);
+            render();
+          });
+        });
+
+        clear.addEventListener('click', () => {
+          active.clear();
+          render();
+        });
+      })();
+    </script>
+  </body>
+</html>
