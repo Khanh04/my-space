@@ -10,7 +10,6 @@ const skillGroups = [
       { key: "transformer", label: "Transformer"},
       { key: "mcp", label: "MCP" },
       { key: "rag", label: "RAG" },
-      { key: "nlp", label: "NLP" },
       { key: "asr", label: "ASR" },
       { key: "ocr", label: "OCR" },
       { key: "pytorch", label: "PyTorch" },
@@ -62,6 +61,7 @@ const experience = [
   {
     role: "Senior Software Engineer",
     company: "QuantrolOx",
+    url: "https://quantrolox.com",
     location: "Espoo, Finland",
     period: "2022 — Present",
     bullets: [
@@ -82,6 +82,7 @@ const experience = [
   {
     role: "Machine Learning Engineer",
     company: "Vainu",
+    url: "https://vainu.com",
     location: "Helsinki, Finland",
     period: "2018 — 2022",
     bullets: [
@@ -110,6 +111,7 @@ const experience = [
   {
     role: "Software Engineer / Data Scientist",
     company: "Swappie",
+    url: "https://swappie.com",
     location: "Helsinki, Finland",
     period: "2022",
     bullets: [
@@ -122,6 +124,7 @@ const experience = [
   {
     role: "Fullstack Developer",
     company: "RND Works",
+    url: "https://www.rnd.works/",
     location: "Vantaa, Finland",
     period: "2017 — 2018",
     bullets: [
@@ -240,7 +243,13 @@ const projects = [
               <div class="role-head">
                 <div class="role-title">
                   <span>{r.role}</span>
-                  <span class="company">{r.company}</span>
+                  <span class="company">
+                    {r.url ? (
+                      <a href={r.url} target="_blank" rel="noopener noreferrer">{r.company}</a>
+                    ) : (
+                      r.company
+                    )}
+                  </span>
                 </div>
                 <div class="role-period">{r.period}</div>
               </div>
@@ -266,25 +275,6 @@ const projects = [
               </div>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section class="contact">
-        <p class="eyebrow">04 · Contact</p>
-        <h2>Get in touch.</h2>
-        <p>
-          Open to conversations about production ML, inference infrastructure, and LLM tooling. The fastest way to reach me is email.
-        </p>
-        <div class="contact-links">
-          <a href="mailto:khanhng93@proton.me">
-            <span class="label">Email</span>khanhng93@proton.me
-          </a>
-          <a href="https://linkedin.com/in/khanh-nguyen-0" target="_blank" rel="noopener">
-            <span class="label">LinkedIn</span>linkedin.com/in/khanh-nguyen-0
-          </a>
-          <a href="https://github.com/" target="_blank" rel="noopener">
-            <span class="label">GitHub</span>github.com
-          </a>
         </div>
       </section>
 
@@ -320,8 +310,8 @@ const projects = [
         const items = document.querySelectorAll('[data-tags]');
         const sections = document.querySelectorAll('[data-filterable]');
         const clear = document.querySelector('[data-clear]');
-        const HIDE_MS = 320;
-        const APPEAR_MS = 420;
+        const HIDE_MS = 180;
+        const APPEAR_MS = 240;
         const active = new Set();
 
         const setState = (el, shouldShow) => {
