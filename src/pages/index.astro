@@ -138,6 +138,16 @@ const experience = [
 
 const projects = [
   {
+    title: "Lumina, Photo Retouching Agent",
+    stack: ["Gemini Flash", "FastAPI", "OpenCV", "React", "Redis"],
+    tags: ["llm-agents", "python", "fastapi", "react", "typescript", "docker"],
+    body: "Lumina is an AI photo retouching agent. It accepts user query and make edit using a set of image editing tool instead of inpainting. Region targeting via presets, YOLO-World + MobileSAM object detection, or manual masks; session state and layer stacks persist in Redis.",
+    links: [
+      { label: "live", href: "https://lumina.khanhng.dev" },
+      { label: "github", href: "https://github.com/Khanh04/lumina-agent" },
+    ],
+  },
+  {
     title: "Speech-to-Text Inference Service",
     stack: ["Conformer", "ONNX", "CTranslate2", "FastAPI"],
     tags: ["asr", "onnx", "quantization", "fastapi", "pytorch", "python","fastapi"],
@@ -273,6 +283,11 @@ const projects = [
               <div class="stack">
                 {p.stack.map((s) => <span>{s}</span>)}
               </div>
+              {p.links && (
+                <div class="project-links">
+                  {p.links.map((l) => <a href={l.href} target="_blank" rel="noopener">{l.label}</a>)}
+                </div>
+              )}
             </article>
           ))}
         </div>

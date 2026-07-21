@@ -523,6 +523,21 @@ p.lede {
   margin-right: 0.25rem;
 }
 
+.project-links {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+.project-links a {
+  color: var(--muted);
+}
+.project-links a:hover {
+  color: var(--fg);
+}
+
 .contact-links {
   display: flex;
   flex-direction: column;
