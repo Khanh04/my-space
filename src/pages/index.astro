@@ -138,6 +138,16 @@ const experience = [
 
 const projects = [
   {
+    title: "Argus, Multimodal Video Search Agent",
+    stack: ["CLIP", "Qdrant", "FastAPI", "React"],
+    tags: ["llm-agents", "python", "fastapi", "react", "typescript", "docker"],
+    body: "Argus is a visual video search agent. Uploaded videos are frame-sampled and embedded with CLIP on a self-hosted GPU worker, then searchable with natural language query. The app returns the matching timestamps for user based on the search. Vector search served from Qdrant, reached through a tunnel from a Railway-hosted FastAPI app.",
+    links: [
+      { label: "live", href: "https://argus.khanhng.dev" },
+      { label: "github", href: "https://github.com/Khanh04/argus-agent" },
+    ],
+  },
+  {
     title: "Lumina, Photo Retouching Agent",
     stack: ["Gemini Flash", "FastAPI", "OpenCV", "React", "Redis"],
     tags: ["llm-agents", "python", "fastapi", "react", "typescript", "docker"],
