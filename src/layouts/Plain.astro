@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="plain">
+      <slot />
+      <p class="plain-foot"><a href="/">khanhnguyen.dev</a></p>
+    </main>
+  </body>
+</html>
+<style>
+  .plain { max-width: var(--measure); margin: 0 auto; padding: 4rem var(--gutter) 3rem; font-family: var(--sans); line-height: 1.6; }
+  .plain :global(h1) { font-family: var(--serif); font-weight: 400; font-size: 2rem; margin: 0 0 1rem; }
+  .plain :global(h2) { font-family: var(--serif); font-weight: 400; font-size: 1.25rem; margin: 2rem 0 0.5rem; }
+  .plain :global(a) { color: var(--accent); }
+  .plain :global(.muted), .plain-foot { color: var(--muted); font-size: 0.9rem; }
+  .plain-foot { margin-top: 3rem; border-top: 1px solid var(--hair); padding-top: 1rem; }
+</style>
